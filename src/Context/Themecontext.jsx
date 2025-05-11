@@ -26,13 +26,13 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-      console.log('Toggling to:', newTheme);
+     
       document.documentElement.classList.remove('dark'); 
       if (newTheme === 'dark') {
         document.documentElement.classList.add('dark');
       }
       localStorage.setItem('theme', newTheme);
-      console.log('HTML classList:', document.documentElement.classList);
+   
       return newTheme;
     });
   };

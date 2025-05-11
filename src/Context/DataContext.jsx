@@ -26,7 +26,7 @@ async function fetchPosts() {
 
         setPosts(postsArray)
       } else {
-        console.log('No data at /posts');
+    
       }
 
     } catch (error) {
@@ -47,7 +47,7 @@ async function fetchPosts() {
 
         setUsers(usersArray)
       } else {
-        console.log('No data at /posts');
+       
       }
 
     } catch (error) {

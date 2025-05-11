@@ -16,7 +16,7 @@ function LoginPopup({ className, onClose }) {
         try {
           const result = await signInWithPopup(auth, googleProvider);
           const user = result.user;
-          console.log('Google Sign-In successful:', user);
+          
           navigate('/'); 
         } catch (error) {
           setError(error.message);

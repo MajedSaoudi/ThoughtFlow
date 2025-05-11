@@ -93,12 +93,12 @@ function BlogPost() {
     setError(null);
 
     try {
-      console.log('followUserHandler inputs:', { userUid: user.uid, authorUid: Post[0].authorUid });
+     
       const result = await followUser(user.uid, Post[0].authorUid);
-      console.log('followUser result:', result);
+     
       if (result.success) {
         await fetchUsers();
-        console.log(`User ${user.uid} followed ${Post[0].authorUid}`);
+       
       } else {
         setError(result.message);
       }
@@ -137,7 +137,7 @@ function BlogPost() {
       const result = await unfollowUser(user.uid, Post[0].authorUid);
       if (result.success) {
         await fetchUsers();
-        console.log(`User ${user.uid} unfollowed ${Post[0].authorUid}`);
+        
       } else {
         setError(result.message);
       }
@@ -204,7 +204,7 @@ function BlogPost() {
         };
         delete updatedPost.comments[commentId];
         setBlog(updatedPost);
-        console.log('Comment deleted successfully');
+       
       } else {
         console.error('Failed to delete comment:', result.message);
       }
@@ -221,7 +221,7 @@ function BlogPost() {
     setFullScreenImage(null);
   };
 
-  console.log('the image url : ', fullScreenImage)
+
 
   return (
 
@@ -462,13 +462,13 @@ function BlogPost() {
                       <div className='flex items-center'>
                         <Link to={``}></Link>
                         <Link to={`/Profile/${author?.userUid}`}>
-                          {console.log('the author is : ', author)}
+                         
                           <h1 className='hover:underline hover:cursor-pointer mr-3'>{author.username}</h1>
                         </Link>
                         {user && user.uid && Post && Array.isArray(Post) && Post[0]?.authorUid && user.uid !== Post[0].authorUid && author ? (
                           <button
                             onClick={() => {
-                              console.log('Button clicked, isFollowing:', author?.Followers?.[user.uid]);
+                          
                               return author?.Followers?.[user.uid] === true ? unfollowUserHandler() : followUserHandler();
                             }}
                             className="pr-2 pl-2 p-1 rounded-3xl border border-black text-[14px] dark:bg-white dark:text-black dark:border-white"

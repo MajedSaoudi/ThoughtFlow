@@ -56,7 +56,7 @@ function CreateBlog() {
       crypto.randomUUID() 
     );
     if (result.success) {
-      console.log('Post created with ID:', result.postId);
+      
       navigate('/Blogs');
     } else {
       console.error('Failed to create post:', result.error);

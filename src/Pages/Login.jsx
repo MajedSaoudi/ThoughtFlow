@@ -20,7 +20,7 @@ function Login() {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       await syncUserWithImage(user, user.displayName, null);
-      console.log('Google Sign-In successful:', user);
+  
       navigate('/Blogs'); 
     } catch (error) {
       setError(error.message);

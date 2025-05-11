@@ -22,7 +22,7 @@ function Profile() {
     const FollowingUsers = users.filter((user) => {
         return UserData?.Following && user?.userUid && UserData.Following[user.userUid] === true;
     });
-    console.log('following : ', FollowingUsers)
+  
     const followUserHandler = async () => {
         if (!user || !user.uid) {
             setError('You must be logged in to follow a user');
@@ -71,7 +71,7 @@ function Profile() {
             const result = await unfollowUser(user?.uid, UserData?.userUid);
             if (result.success) {
                 await fetchUsers();
-                console.log(`User ${user.uid} unfollowed ${UserData?.userUid}`);
+               
             } else {
                 setError(result.message);
             }
@@ -93,7 +93,7 @@ function Profile() {
             if (result.Succeed) {
                 alert('post deleted ')
             } else {
-                console.log('the deleting post message ', result.message);
+               
             }
         } catch (error) {
             console.log('the deleting post message ', error.message);
@@ -164,10 +164,10 @@ function Profile() {
                                         <button
                                             onClick={() => {
                                                 if (UserData?.userUid === user?.uid) {
-                                                    console.log('Edit Profile clicked');
+                                                 
                                                     setOpenEditProfile(true);
                                                 } else {
-                                                    console.log('Button clicked, isFollowing:', UserData?.Followers?.[user.uid]);
+                                                
                                                     return UserData?.Followers?.[user.uid] === true ? unfollowUserHandler() : followUserHandler();
                                                 }
                                             }}
@@ -302,10 +302,10 @@ function Profile() {
                                 <button
                                     onClick={() => {
                                         if (UserData?.userUid === user?.uid) {
-                                            console.log('Edit Profile clicked');
+                                           
                                             setOpenEditProfile(true);
                                         } else {
-                                            console.log('Button clicked, isFollowing:', UserData?.Followers?.[user.uid]);
+                                        
                                             return UserData?.Followers?.[user.uid] === true ? unfollowUserHandler() : followUserHandler();
                                         }
                                     }}
