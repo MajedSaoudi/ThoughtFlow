@@ -1,0 +1,102 @@
+.Profile-Tab{
+    position: relative;
+    
+}
+.Profile-Dropdown{
+    position: absolute;
+    left: -130px;
+    top: 60px;
+    text-align: center;
+    width: 300px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.search-svg{
+    opacity: 0.5;
+}
+.search-container:focus-within .search-svg {
+    opacity: 1;
+  }
+
+  .search-container{
+    position: relative;
+  }
+
+  .tooltip-box {
+    position: relative;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .Search-Mobile{
+    display: none;
+   }
+  .tooltip-box::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 20px; 
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: black transparent white transparent;
+    
+  }
+
+ .mobile-white-logo{
+  display: none;
+ }
+ .mobile-black-logo{
+  display: none;
+ }
+
+ @media screen and (max-width:620px){
+  .black-logo{
+    display:none;
+  }
+  .white-logo{
+    display:none;
+  }
+  .mobile-white-logo{
+    display: flex;
+  }
+  .mobile-black-logo{
+    display: flex;
+  }
+  .mobile-dropdown{
+    display: none;
+  }
+  .Search-Mobile{
+    display: flex;
+   }
+   .write-p{
+    display: none;
+   }
+   .search-container{
+    display: none;
+   }
+   .Profile-Container{
+   
+   }
+ }
+
+
+  @media screen and (max-width:570px){
+    .toggle-theme-btn{
+      width: 30px;
+      height: 30px;
+    }
+    .buttons-container{
+      gap: 5px;
+    }
+    .Links{
+      display: none;
+    }
+  }
+  @media screen and (max-width:570px){
+       .Login-btn{
+        display: none;
+       }
+      
+  }

@@ -1,0 +1,39 @@
+@media screen and (max-width:830px){
+    .Profile-Details{
+        display: none;
+        border: none;
+    }
+    .posts{
+        width: 100%;
+    }
+    .Profile-container{
+        justify-content: start;
+        flex-direction: column;
+        width: 100%;
+    }
+    .pc-details{
+        display: none;
+    }
+    .Profile-mobile{
+        display: block;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .Posts-container{
+        h1{
+        font-size: 20px;
+        }
+        p{
+        font-size: 12px;
+        }
+    }
+    
+    
+}
+
+.Edit-container{
+    backdrop-filter: blur(5px);
+}
+
