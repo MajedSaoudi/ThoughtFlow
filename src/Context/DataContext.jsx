@@ -11,11 +11,11 @@ export const DataProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const DatabaseUrl = process.env.REACT_APP_FIREBASE_DATABASEURL;
 
-  
 async function fetchPosts() {
     try {
-      const response = await fetch('https://thoughtflow-b3eb9-default-rtdb.europe-west1.firebasedatabase.app/posts.json');
+      const response = await fetch(`${DatabaseUrl}/posts.json`);
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`HTTP error: ${response.status}, ${errorText}`);
@@ -23,7 +23,7 @@ async function fetchPosts() {
       const data = await response.json();
       if (data) {
         const postsArray = Object.values(data);
-
+        
         setPosts(postsArray)
       } else {
     
@@ -36,7 +36,7 @@ async function fetchPosts() {
 
   async function fetchUsers() {
     try {
-      const response = await fetch('https://thoughtflow-b3eb9-default-rtdb.europe-west1.firebasedatabase.app/users.json');
+      const response = await fetch(`${DatabaseUrl}/users.json`);
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`HTTP error: ${response.status}, ${errorText}`);

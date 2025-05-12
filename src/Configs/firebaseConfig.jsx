@@ -105,13 +105,14 @@ export const PostBlog = async (contentBlocks,title,thumbnailUrl, tags, category,
       }),
       createdAt: Date.now(),
     };
-   
+    console.log('Post data:', postData);
 
     // Write to specific Token path
     const postRef = ref(database, `posts/${Token}`);
-   
+    console.log('Post ref:', postRef.toString());
+    console.log('Writing to database...');
     await set(postRef, postData);
-   
+    console.log('Write successful');
 
     return { success: true, postId: Token };
   } catch (error) {
@@ -216,7 +217,7 @@ export async function addLikes(numberOfLikes, postId) {
       Likes: prevLikes + numberOfLikes,
     });
 
-    
+    console.log('Like added successfully');
     return { success: true, message: 'Like added' }; 
   } catch (error) {
     console.error('Error adding Likes:', error);
@@ -344,7 +345,7 @@ export async function updateUserProfile(displayName, photoURL) {
     const userRef = ref(database, `users/${user.uid}`);
     await update(userRef, dbUpdate);
 
-    
+    console.log("Profile updated successfully!");
     return { success: true };
   } catch (error) {
     console.error("Error updating profile:", error.message);
@@ -384,7 +385,7 @@ export async function likeComment(postId, commentId, numberOfLikes) {
       return { ...currentData, Likes: newLikes };
     });
 
-   
+    console.log('Like added successfully');
     return { success: true, message: 'Like added' };
   } catch (error) {
     console.error('Error adding likes:', error);
