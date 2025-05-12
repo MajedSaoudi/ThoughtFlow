@@ -43,7 +43,7 @@ useEffect(()=>{
     </div>
     <hr className='border-[1px] border-black dark:border-white'/>
     <div className='flex items-center gap-6 mt-4'>
-      <img src={People} className=' lg:h-20 sm:h-14 md:h-16 h-14' alt='users pictures'/>
+      <img src={People} className='lg:h-20 lg:w-auto  md:w-auto sm:w-auto sm:h-14 md:h-16 h-14 w-[130px]' alt='users pictures'/>
       <h2 className='font-[Inter] text-[20px] text-gray-700 font-[600] dark:text-gray-500'>JOIN OUR COMMUNITY OF AUTHORS AND READERS!</h2>
     </div>
      <div className='flex gap-6 mt-4'>
