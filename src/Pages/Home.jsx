@@ -43,17 +43,17 @@ useEffect(()=>{
     </div>
     <hr className='border-[1px] border-black dark:border-white'/>
     <div className='flex items-center gap-6 mt-4'>
-      <img src={People} className='lg:h-20 lg:w-auto  md:w-auto sm:w-auto sm:h-14 md:h-16 h-14 w-[130px]' alt='users pictures'/>
+      <img src={People} className='lg:h-20   sm:h-14 md:h-16 h-14 ' alt='users pictures'/>
       <h2 className='font-[Inter] text-[20px] text-gray-700 font-[600] dark:text-gray-500'>JOIN OUR COMMUNITY OF AUTHORS AND READERS!</h2>
     </div>
      <div className='flex gap-6 mt-4'>
-      <Link className='Read-btn dark:bg-slate-600 dark:text-white' to='/Blogs'><button >Start to read<img src={starttoread} className='w-6'/> </button></Link>
+      <Link className='Read-btn dark:bg-slate-600 dark:text-white' to='/Blogs'><button >Start to read<img src={starttoread} className='w-6 max-h-7'/> </button></Link>
       <Link to={"/Signup"}><button className='rounded-lg pr-6 p-6 border border-black dark:border-white dark:text-white'>Become an author</button></Link>
      </div>
     </div>
     <div className='Image-container w-[500px]'>
       <div className='w-full mb-2'>
-      <img src={Homeimg} className=' w-[100%] h-[450px]  object-cover object-top' style={{borderRadius: '16px 0px 16px 0px'}}/>
+      <img src={Homeimg} className='home-img w-[100%] h-[450px]  object-cover object-top' style={{borderRadius: '16px 0px 16px 0px'}}/>
       </div>
       <div className='home-text-container flex gap-4 text-center'>
         <div className=' border border-[#dbdbdb] dark:bg-[#2b2b2b] dark:border-none dark:text-[#f0f0f0] p-4' style={{borderRadius: '0px 0px 16px 0px'}}>

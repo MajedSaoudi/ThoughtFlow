@@ -44,10 +44,11 @@
     }
      .Image-container{
         width: 380px;
-        img{
+        
+     }
+     .home-img{
             height: 350px;
         }
-     }
 }
 
 @media screen and (max-width:1226px){
@@ -81,9 +82,12 @@
     }
      .Image-container{
         width: 380px;
-        img{
+       
+     }
+     .home-img{
+         
             height: 320px;
-        }
+        
      }
 }
 
@@ -98,11 +102,12 @@
     .Image-container{
         width: 300px;
         
-        img{
+        
+    }
+    .home-img{
             height: 250px;
             border-radius: 100%;
         }
-    }
 }
 
 @media screen and (max-width:710px){
@@ -118,11 +123,9 @@
         }
     .Image-container{
         width: 400px;
-        
-         img{
-                height: 200px;
-            }
-       
+    }
+    .home-img{
+        height: 200px;
     }
     .home-text-container{
         display: none;
