@@ -4,16 +4,16 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light'); // Default to light mode
+  const [theme, setTheme] = useState('light'); 
 
-  // Load theme from localStorage on mount
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle('dark', savedTheme === 'dark');
     } else {
-      // Optional: Respect system preference
+     
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       const defaultTheme = prefersDark ? 'dark' : 'light';
       setTheme(defaultTheme);
@@ -22,7 +22,7 @@ export const ThemeProvider = ({ children }) => {
     }
   }, []);
 
-  // Function to toggle theme
+
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';

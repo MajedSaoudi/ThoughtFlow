@@ -130,6 +130,12 @@
     .home-text-container{
         display: none;
     }
+    .Home-btns{
+        gap: 30px;
+        button{
+            font-size: 18px;
+        }
+    }
 }
 @media screen and (max-width:490px){
     .Image-container{
@@ -141,6 +147,15 @@
         h1{
           
             line-height: 55px;
+        }
+    }
+}
+
+@media screen and (max-width:415px){
+    .Home-btns{
+       
+       button{
+            font-size: 14px;
         }
     }
 }

@@ -10,10 +10,11 @@ import {AuthContext} from '../Context/AuthContext';
 
 import LoginPopup from '../Components/LoginPopup';
 import { Link } from 'react-router-dom';
+import Loader from '../Components/Loader';
 function Home() {
   
   const user = useContext(AuthContext);
- 
+  const [isloading,setIsLoading] = useState(true)
   const [showpopup,setShowPopup] = useState(false)
   
 
@@ -21,11 +22,30 @@ useEffect(()=>{
   setTimeout(()=>{
     setShowPopup(true)
   },5000)
+  
+  const handleLoad = () => {
+    setTimeout(()=>{
+      setIsLoading(false);
+    },1000)
+    };
+
+    if (document.readyState === 'complete') {
+        setTimeout(()=>{
+        setIsLoading(false);
+        },1000)
+    } else {
+      window.addEventListener('load', handleLoad);
+      
+      return () => window.removeEventListener('load', handleLoad);
+    }
+
 },[])
  
   
  
   return (
+    <>
+    {isloading? <Loader /> : 
     <>
     {!user&&showpopup? 
     <div className='Popup-Page absolute h-screen w-[100vw] flex items-center justify-center'>
@@ -46,7 +66,7 @@ useEffect(()=>{
       <img src={People} className='lg:h-20   sm:h-14 md:h-16 h-14 ' alt='users pictures'/>
       <h2 className='font-[Inter] text-[20px] text-gray-700 font-[600] dark:text-gray-500'>JOIN OUR COMMUNITY OF AUTHORS AND READERS!</h2>
     </div>
-     <div className='flex gap-6 mt-4'>
+     <div className='flex gap-6 mt-4 Home-btns'>
       <Link className='Read-btn dark:bg-slate-600 dark:text-white' to='/Blogs'><button >Start to read<img src={starttoread} className='w-6 max-h-7'/> </button></Link>
       <Link to={"/Signup"}><button className='rounded-lg pr-6 p-6 border border-black dark:border-white dark:text-white'>Become an author</button></Link>
      </div>
@@ -66,6 +86,8 @@ useEffect(()=>{
     </div>
     </div>
     </div>
+    </>
+    }
     </>
   )
 }

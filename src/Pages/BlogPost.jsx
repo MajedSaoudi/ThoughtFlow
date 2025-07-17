@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import { addComment, addLikes, followUser, unfollowUser, likeComment, deleteComment } from '../Configs/firebaseConfig';
 import { useData } from '../Context/DataContext';
 import { formatDistanceToNow } from 'date-fns';
 import './BlogPost.css';
 function BlogPost() {
+
+
+  
   const PostToken = useParams()
   const { posts, users, error, loading, fetchPosts, fetchUsers, setError, setLoading } = useData()
 
@@ -14,19 +17,24 @@ function BlogPost() {
   const user = useContext(AuthContext);
   const [commentlikes, setCommentLikes] = useState(0);
   const [bold, setBold] = useState(false);
-
+  
   const [commentsIsOpen, setCommentIsOpen] = useState(false);
   const [likes, setLikes] = useState(0);
   const [fullScreenImage, setFullScreenImage] = useState(null);
 
   const Post = posts?.filter((post) => post.PostToken === PostToken.PostToken);
   const [blog, setBlog] = useState(Post || []);
-  if (!Post) return <div>Post not found</div>
+ 
   const Author = users?.filter((user) => user?.userUid === Post[0]?.authorUid);
   const date = new Date(Post[0]?.createdAt);
   const options = { month: 'short', day: 'numeric', year: 'numeric' };
   const formattedDate = date.toLocaleDateString('en-US', options);
+  
+ 
 
+
+  if (Post.length<1) return <Navigate to="/404" replace />;
+ 
 
   const PostComment = async (e) => {
     e.preventDefault();
@@ -327,7 +335,7 @@ function BlogPost() {
                                           height="20"
                                           fill="none"
                                           viewBox="0 0 24 24"
-                                          className="ef dy eh eg"
+                                          className="ef dy eh eg "
                                         >
                                           <path
                                             stroke="currentColor"
@@ -370,6 +378,7 @@ function BlogPost() {
                                         viewBox="0 0 24 24"
                                         role="img"
                                         aria-label="Clap icon"
+                                        class="dark:fill-white"
                                       >
                                         <path
                                           fillRule="evenodd"

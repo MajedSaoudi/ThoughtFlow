@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { useData } from '../Context/DataContext';
 import { AuthContext } from '../Context/AuthContext';
 import { followUser, unfollowUser, updateUserProfile } from '../Configs/firebaseConfig';
@@ -133,8 +133,16 @@ function Profile() {
             setLoading(false);
         };
         loadPosts();
+
+
+    
+   
+  
     }, []);
 
+    if (!UserData) {
+    return <Navigate to="/404" replace />;
+    }
     return (
         <div className='flex justify-center  dark:bg-[#121212] bg-white min-h-[100vh]'>
             <div className='Profile-container  lg:w-[1150px] md:w-[100%] pl-6 pr-6 p-6 dark:text-white text-black mt-[45px] lg:flex md:flex sm:flex justify-between'>

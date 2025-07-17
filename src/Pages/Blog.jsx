@@ -46,16 +46,9 @@ function Blog() {
   const Feed = ['For You', 'Following','AI','Sport','Data Science'];
   const POSTS_PER_PAGE = 6;
   const [visiblePostCount,setVisiblePostCount] = useState(POSTS_PER_PAGE);
- const generateToken = () => {
 
-    
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-      (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-    );
-  
-};
 
-  const Token = generateToken();
+ 
 
   const deletePostHandler = async (user, PostToken, Authoruid) => {
     try {

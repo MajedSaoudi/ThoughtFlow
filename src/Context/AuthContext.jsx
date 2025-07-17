@@ -10,8 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-     
+      setUser(currentUser);   
       setLoading(false);
     },(error) => {
       console.error('Auth state error:', error);
@@ -21,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={ user}>
+    <AuthContext.Provider value={user}>
       {!loading && children}
     </AuthContext.Provider>
   );
