@@ -11,13 +11,13 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <DataProvider>
   <ThemeProvider>
     <AuthProvider>
-      <DataProvider>
     <App />
-    </DataProvider>
     </AuthProvider>
   </ThemeProvider>
+  </DataProvider>
   </BrowserRouter>
 );
 
