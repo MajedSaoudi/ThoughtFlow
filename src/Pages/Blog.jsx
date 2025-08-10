@@ -338,7 +338,7 @@ const displayedPosts = getFilteredPosts();
               </div>
             </div>
           </div>
-          <div className='Staff-picks pl-7 pr-4 border-l border-gray-200 dark:text-white'>
+          <div className='Staff-picks pl-7 pr-4 border-l border-gray-200 dark:text-white dark:border-gray-700'>
             <div >
               <b>Staff Picks</b>
               <div className='mt-5'>
@@ -367,7 +367,7 @@ const displayedPosts = getFilteredPosts();
                   })
                 }
               </div>
-              <hr></hr>
+              <hr className='dark:border-gray-700'></hr>
             </div>
             <div className='mt-4 mb-4'>
               <b>Who to follow</b>
@@ -384,7 +384,7 @@ const displayedPosts = getFilteredPosts();
                         ))}
          
               </div>
-              <hr />
+              <hr className='dark:border-gray-700'/>
             </div>
             <div>
             <b className='mt-4'>Reading list</b>
