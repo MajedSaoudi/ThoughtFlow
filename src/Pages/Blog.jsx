@@ -338,6 +338,7 @@ const displayedPosts = getFilteredPosts();
               </div>
             </div>
           </div>
+          
           <div className='Staff-picks pl-7 pr-4 border-l border-gray-200 dark:text-white dark:border-gray-700'>
             <div >
               <b>Staff Picks</b>
@@ -373,7 +374,7 @@ const displayedPosts = getFilteredPosts();
               <b>Who to follow</b>
               <div className='mt-5'>
                   
-                        {users.filter((Author)=> Author.userUid !== user.uid).slice(0,4).map((author)=>(
+                        {users.filter((Author)=> Author.userUid !== user?.uid).slice(0,4).map((author)=>(
                           <div className='flex mb-3 justify-between'>
                           <Link className='flex items-center gap-3' to={`/Profile/${author.userUid}`}> 
                           <img src={author.profileImage} className='h-8 w-8  rounded-full object-cover' />
@@ -396,6 +397,7 @@ const displayedPosts = getFilteredPosts();
               <p className='text-gray-600 text-sm dark:text-gray-500'>  your reading list or a custom list that you can share.</p>
             </div>
           </div>
+          
         </div>
       </div>
     </>
