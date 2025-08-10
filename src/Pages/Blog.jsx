@@ -119,7 +119,7 @@ const displayedPosts = getFilteredPosts();
     <>
     
       <div className="flex justify-center dark:bg-[#121212] bg-white min-h-screen">
-        <div className="lg:w-[1100px] w-[100%] pl-6 pr-6 p-6 dark:bg-[#121212] text-black mt-[90px]">
+        <div className="lg:w-[1100px] w-[100%] pl-6 pr-6 p-6 dark:bg-[#121212] text-black mt-[90px] flex gap-14">
           <div className="flex justify-center lg:w-full md:w-full sm:w-full ">
             <div className="Post-container text-black">
               <div className="relative flex gap-4 lg:w-[660px] md:w-[660px]  mb-8 dark:text-white">
@@ -336,6 +336,64 @@ const displayedPosts = getFilteredPosts();
                   )}
                 </div>
               </div>
+            </div>
+          </div>
+          <div className='Staff-picks pl-7 pr-4 border-l border-gray-200 dark:text-white'>
+            <div >
+              <b>Staff Picks</b>
+              <div className='mt-5'>
+                {
+                  posts.slice(0,3).map((post)=>
+                  {
+                    return(
+                      <div key={post.PostToken} >
+                        {users.filter((user)=> user.userUid == post.authorUid).map((author)=>(
+                          <div >
+                          <Link className='flex items-center gap-2 mt-4 hover:cursor-pointer hover:underline' to={`/Profile/${author.userUid}`}> 
+                          <img src={author.profileImage} className='h-5 w-5  rounded-full object-cover' />
+                          <h1 className='text-gray-900 text-sm dark:text-gray-600'>{author.username}</h1>
+                          </Link>
+                          </div>
+                        ))}
+                        <Link to={`/Blogs/${post.PostToken}`}>
+                          <h1 className='mt-2 font-bold '>{post.Title}</h1>
+                          <p className='mt-2 text-sm mb-5 text-gray-900 dark:text-gray-600'> {new Date(post.createdAt).toLocaleDateString('en-US', {
+                            month: 'short',
+                            day: 'numeric',
+                          })}</p>
+                          </Link>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+              <hr></hr>
+            </div>
+            <div className='mt-4 mb-4'>
+              <b>Who to follow</b>
+              <div className='mt-5'>
+                  
+                        {users.filter((Author)=> Author.userUid !== user.uid).slice(0,4).map((author)=>(
+                          <div className='flex mb-3 justify-between'>
+                          <Link className='flex items-center gap-3' to={`/Profile/${author.userUid}`}> 
+                          <img src={author.profileImage} className='h-8 w-8  rounded-full object-cover' />
+                          <h1 className=' font-bold '>{author.username}</h1>
+                          </Link>
+                          
+                          </div>
+                        ))}
+         
+              </div>
+              <hr />
+            </div>
+            <div>
+            <b className='mt-4'>Reading list</b>
+            <div className='flex mt-3 text-sm'>
+              <p className='text-gray-600'>Click the</p>
+             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25" class="jz bl"><path fill="currentColor" d="M18 2.5a.5.5 0 0 1 1 0V5h2.5a.5.5 0 0 1 0 1H19v2.5a.5.5 0 1 1-1 0V6h-2.5a.5.5 0 0 1 0-1H18zM7 7a1 1 0 0 1 1-1h3.5a.5.5 0 0 0 0-1H8a2 2 0 0 0-2 2v14a.5.5 0 0 0 .805.396L12.5 17l5.695 4.396A.5.5 0 0 0 19 21v-8.5a.5.5 0 0 0-1 0v7.485l-5.195-4.012a.5.5 0 0 0-.61 0L7 19.985z"></path></svg>
+              <p className='text-gray-600'>on any story to easily add it to</p>
+              </div>
+              <p className='text-gray-600 text-sm'>  your reading list or a custom list that you can share.</p>
             </div>
           </div>
         </div>
