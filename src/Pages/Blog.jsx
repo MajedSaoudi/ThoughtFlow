@@ -388,12 +388,12 @@ const displayedPosts = getFilteredPosts();
             </div>
             <div>
             <b className='mt-4'>Reading list</b>
-            <div className='flex mt-3 text-sm'>
-              <p className='text-gray-600'>Click the</p>
-             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25" class="jz bl"><path fill="currentColor" d="M18 2.5a.5.5 0 0 1 1 0V5h2.5a.5.5 0 0 1 0 1H19v2.5a.5.5 0 1 1-1 0V6h-2.5a.5.5 0 0 1 0-1H18zM7 7a1 1 0 0 1 1-1h3.5a.5.5 0 0 0 0-1H8a2 2 0 0 0-2 2v14a.5.5 0 0 0 .805.396L12.5 17l5.695 4.396A.5.5 0 0 0 19 21v-8.5a.5.5 0 0 0-1 0v7.485l-5.195-4.012a.5.5 0 0 0-.61 0L7 19.985z"></path></svg>
-              <p className='text-gray-600'>on any story to easily add it to</p>
+            <div className='flex mt-3 text-sm '>
+              <p className='text-gray-600 dark:text-gray-500'>Click the</p>
+             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25" class="jz bl"><path fill="currentColor" className='dark:fill-gray-400'  d="M18 2.5a.5.5 0 0 1 1 0V5h2.5a.5.5 0 0 1 0 1H19v2.5a.5.5 0 1 1-1 0V6h-2.5a.5.5 0 0 1 0-1H18zM7 7a1 1 0 0 1 1-1h3.5a.5.5 0 0 0 0-1H8a2 2 0 0 0-2 2v14a.5.5 0 0 0 .805.396L12.5 17l5.695 4.396A.5.5 0 0 0 19 21v-8.5a.5.5 0 0 0-1 0v7.485l-5.195-4.012a.5.5 0 0 0-.61 0L7 19.985z"></path></svg>
+              <p className='text-gray-600 dark:text-gray-500'>on any story to easily add it to</p>
               </div>
-              <p className='text-gray-600 text-sm'>  your reading list or a custom list that you can share.</p>
+              <p className='text-gray-600 text-sm dark:text-gray-500'>  your reading list or a custom list that you can share.</p>
             </div>
           </div>
         </div>
